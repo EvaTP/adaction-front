@@ -1,0 +1,89 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #059669;
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --hover-color: #f3f4f6;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+
+/* GENERAL LAYOUT */
+/* ************** */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3em;
+  color: hotpink;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  margin: auto;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+footer p{
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid white;
+  border-top-color: transparent;
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
