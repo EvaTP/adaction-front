@@ -2,8 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import styles from "../styles/layout.module.css";
-import styles from "../styles/globals.css";
+import layoutStyles from "../styles/layout.module.css";
 import ItemVolunteer from "./components/itemVolunteer";
 import { useState, useEffect } from "react";
 
@@ -28,37 +27,37 @@ export default function VolunteersMgt(){
 
 
   return (
-    <div className="app-container">
+    <div className="app_container">
       <header className="header"> 
-        <div className="header-content">
-          <h1 className="header-title">Adaction</h1>
+        <div className="header_content">
+          <h1 className="header_title">Adaction</h1>
         </div>  
-        <p className="header-subtitle">Agir pour un environnement plus propre</p>     
+        <p className="header_subtitle">Agir pour un environnement plus propre</p>     
       </header>
 
 	  <div>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link href="/manage-users" className="navbarLink">
+      <nav className={layoutStyles.navbar}>
+        <div className={layoutStyles.navbar_container}>
+          <Link href="/manage_users" className={layoutStyles.navbar_link}>
             <span>Gestion des bénévoles</span>
           </Link>
-          <Link href="/leaderboard" className="navbarLink">
+          <Link href="/leaderboard" className={layoutStyles.navbar_link}>
             <span>Leaderboard</span>
           </Link>
         </div>
       </nav>
 	  </div>
 
-    <main className="main-content">
-      <div className="card">
-        <div className={styles.volunteers-actions}>
-          <button className={submit-btn}>Ajouter un.e bénévole</button>
-          <div className={search-filters}>
-            <div className={search-container}>
-              <input placeholder="Rechercher un.e bénévole" className={search-input} type="text"/>
+    <main className={layoutStyles.main_content}>
+      <div className={layoutStyles.card}>
+        <div className={styles.volunteers_actions}>
+          <button className={layoutStyles.submit_btn}>Ajouter un.e bénévole</button>
+          <div className={styles.search_filters}>
+            <div className={styles.search_container}>
+              <input placeholder="Rechercher un.e bénévole" className={styles.search_input} type="text"/>
             </div>
-            <div className={location-filter}>
-              <select className={search-input}>
+            <div className={styles.location_filter}>
+              <select className={styles.search_input}>
                 <option value>Toutes les villes</option>
                 <option value="Paris">Paris</option>
                 <option value="Lyon">Lyon</option>
@@ -80,7 +79,7 @@ export default function VolunteersMgt(){
       </div>
     </main>
 	  <footer>
-      <p class="info-text">🌱 Merci d'agir pour la planète. Vous faites partie du changement.</p>
+      <p className="info_text">🌱 Merci d'agir pour la planète. Vous faites partie du changement.</p>
       </footer>
     </div>
   );

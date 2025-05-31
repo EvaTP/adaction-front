@@ -10,29 +10,29 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   padding: 1rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
-.header-content {
+.header_content {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
-.header-title {
+.header_title {
   font-size: 1.25rem;
   font-weight: 700;
 }
-.header-subtitle {
+.header_subtitle {
   text-align: center;
   color: #a7f3d0;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
 /* Base styles */
-.app-container {
+.app_container {
   min-height: 100vh;
   background-color: #f9fafb;
 }
 /* Main content */
-.main-content {
+.main_content {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 1rem;
 }
-.card-header {
+.card_header {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-color);
@@ -59,13 +59,13 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 }
 
 /* Form styles */
-.form-container {
+.form_container {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.form-label {
+.form_label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -73,7 +73,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 }
 
 /* Success message */
-.success-message {
+.success_message {
   background-color: #10b981;
   color: white;
   padding: 0.75rem;
@@ -81,19 +81,19 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   animation: fadeOut 3s ease-in-out forwards;
   opacity: 1;
 }
-.success-icon {
+.success_icon {
   display: inline;
   margin-right: 0.5rem;
 }
 
 
 /* Waste type buttons */
-.waste-types-grid {
+.waste_types_grid {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.waste-type-btn {
+.waste_type_btn {
   width: 100%;
   padding: 0.75rem;
   border-radius: 0.5rem;
@@ -107,56 +107,56 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 }
 
 /* Ajout des styles pour la mise en page 50/50 */
-.waste-types-grid > div {
+.waste_types_grid > div {
   display: flex;
   gap: 0.5rem;
 }
 
-.waste-types-grid > div > button {
+.waste_types_grid > div > button {
   flex: 1;
 }
 
-.waste-types-grid > div > div {
+.waste_types_grid > div > div {
   flex: 1;
   display: flex;
   justify-content: flex-end;
 }
 
-.waste-type-btn:hover {
+.waste_type_btn:hover {
   border-color: #d1d5db;
 }
 
-.waste-type-btn.selected {
+.waste_type_btn.selected {
   border-color: #10b981;
   background-color: #ecfdf5;
 }
 
 /* Badge colors */
-.badge-plastic {
+.badge_plastic {
   background-color: #dbeafe;
   color: #1e40af;
 }
-.badge-glass {
+.badge_glass {
   background-color: #dcfce7;
   color: #166534;
 }
-.badge-metal {
+.badge_metal {
   background-color: #f3f4f6;
   color: #374151;
 }
-.badge-paper {
+.badge_paper {
   background-color: #fef3c7;
   color: #92400e;
 }
-.badge-organic {
+.badge_organic {
   background-color: #fed7aa;
   color: #c2410c;
 }
-.badge-electronic {
+.badge_electronic {
   background-color: #e9d5ff;
   color: #7c2d12;
 }
-.badge-other {
+.badge_other {
   background-color: #fecaca;
   color: #991b1b;
 }
@@ -178,8 +178,8 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 }
 
 /* Submit button */
-.submit-btn,
-.donate-btn {
+.submit_btn,
+.donate_btn {
   width: 100%;
   display: flex;
   align-items: center;
@@ -195,58 +195,58 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   transition: background-color 0.2s;
 }
 
-.submit-btn:hover:not(:disabled),
-.donate-btn:hover:not(:disabled) {
+.submit_btn:hover:not(:disabled),
+.donate_btn:hover:not(:disabled) {
   background-color: #047857;
 }
 
-.submit-btn:disabled,
-.donate-btn:disabled {
+.submit_btn:disabled,
+.donate_btn:disabled {
   background-color: var(--text-secondary);
   cursor: not-allowed;
 }
 
-.logout-btn,
-.manage-btn {
+.logout_btn,
+.manage_btn {
   background-color: var(--text-secondary);
 }
 
-.logout-btn:hover:not(:disabled),
-.manage-btn:hover:not(:disabled) {
+.logout_btn:hover:not(:disabled),
+.manage_btn:hover:not(:disabled) {
   background-color: #4b5563;
 }
 
 
 /* Reports list */
-.reports-list {
+.reports_list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.report-item {
+.report_item {
   padding: 1rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
 }
 
-.report-header {
+.report_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.report-timestamp {
+.report_timestamp {
   color: #6b7280;
   font-size: 0.875rem;
 }
 
-.report-description {
+.report_description {
   margin: 0.5rem 0;
 }
 
-.report-location {
+.report_location {
   color: #4b5563;
   font-size: 0.875rem;
   margin: 0.5rem 0;
@@ -254,29 +254,29 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 
 /* Responsive design */
 @media (min-width: 768px) {
-  .main-content {
+  .main_content {
     max-width: 28rem;
     margin: 0 auto;
   }
 
-  .waste-types-grid {
+  .waste_types_grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .main-content {
+  .main_content {
     flex-direction: row;
     padding: 2rem;
     gap: 2rem;
   }
 
-  .main-content > .card {
+  .main_content > .card {
     flex: 1;
     min-width: 0; /* Pour éviter le débordement */
   }
 
-  .waste-types-grid {
+  .waste_types_grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -288,7 +288,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   padding: 0.2rem 1rem;
 }
 
-.navbar-container {
+.navbar_container {
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
@@ -296,7 +296,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   gap: 2rem;
 }
 
-.navbar-link {
+.navbar_link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -307,41 +307,41 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   transition: all 0.2s;
 }
 
-.navbar-link:hover,
-.navbar-link.active {
+.navbar_link:hover,
+.navbar_link.active {
   color: var(--primary-color);
   background-color: #ecfdf5;
 }
 
-.navbar-link.active {
+.navbar_link.active {
   font-weight: 500;
 }
 
 /* Responsive navbar */
 @media (max-width: 640px) {
-  .navbar-container {
+  .navbar_container {
     gap: 1.5rem;
   }
 
-  .navbar-link {
+  .navbar_link {
     flex-direction: column;
     padding: 0.5rem;
     gap: 0.25rem;
   }
 
-  .navbar-link span {
+  .navbar_link span {
     font-size: 0.75rem;
   }
 }
 
 /* Dashboard styles */
-.dashboard-header {
+.dashboard_header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.month-navigation {
+.month_navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -349,7 +349,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   max-width: 300px;
 }
 
-.month-nav-btn {
+.month_nav_btn {
   background: none;
   border: none;
   color: var(--text-color);
@@ -362,23 +362,23 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   transition: background-color 0.2s;
 }
 
-.month-nav-btn:hover:not(:disabled) {
+.month_nav_btn:hover:not(:disabled) {
   background-color: var(--hover-color);
 }
 
-.month-nav-btn:disabled {
+.month_nav_btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.current-month {
+.current_month {
   font-size: 1.1rem;
   font-weight: 500;
   min-width: 200px;
   text-align: center;
 }
 
-.waste-grid {
+.waste_grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
@@ -386,7 +386,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   width: 100%;
 }
 
-.waste-card {
+.waste_card {
   background-color: white;
   border-radius: 12px;
   padding: 1rem;
@@ -397,12 +397,12 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   border: 1px solid var(--border-color);
 }
 
-.waste-card:hover {
+.waste_card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.waste-icon {
+.waste_icon {
   width: 40px;
   height: 40px;
   background-color: var(--primary-color);
@@ -414,25 +414,25 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   flex-shrink: 0;
 }
 
-.waste-info {
+.waste_info {
   flex: 1;
   min-width: 0;
 }
 
-.waste-info h3 {
+.waste_info h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
 }
 
-.waste-count {
+.waste_count {
   margin: 0.25rem 0 0;
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
 /* Donate page styles */
-.points-display {
+.points_display {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -442,14 +442,14 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   color: #059669;
 }
 
-.associations-grid {
+.associations_grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.association-card {
+.association_card {
   background-color: white;
   border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
@@ -457,37 +457,37 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.association-card:hover {
+.association_card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.association-header {
+.association_header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
-.association-emoji {
+.association_emoji {
   font-size: 1.5rem;
 }
 
-.association-header h3 {
+.association_header h3 {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
   color: #1f2937;
 }
 
-.association-description {
+.association_description {
   color: #4b5563;
   font-size: 0.875rem;
   margin: 0.5rem 0;
   line-height: 1.5;
 }
 
-.association-footer {
+.association_footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -496,12 +496,12 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   border-top: 1px solid #e5e7eb;
 }
 
-.points-required {
+.points_required {
   color: #059669;
   font-weight: 500;
 }
 
-.donate-btn {
+.donate_btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -515,17 +515,17 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   transition: background-color 0.2s;
 }
 
-.donate-btn:hover:not(:disabled) {
+.donate_btn:hover:not(:disabled) {
   background-color: #047857;
 }
 
-.donate-btn:disabled {
+.donate_btn:disabled {
   background-color: #9ca3af;
   cursor: not-allowed;
 }
 
 /* Modal styles */
-.modal-overlay {
+.modal_overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -554,13 +554,13 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   color: var(--text-color);
 }
 
-.modal-actions {
+.modal_actions {
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.modal-actions .submit-btn {
+.modal_actions .submit-btn {
   flex: 1;
 }
 

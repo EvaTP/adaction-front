@@ -1,24 +1,24 @@
 /* Volunteers management styles */
-.volunteers-actions {
+.volunteers_actions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.search-filters {
+.search_filters {
   display: flex;
   gap: 1rem;
   width: 100%;
 }
 
-.search-container,
-.location-filter {
+.search_container,
+.location_filter {
   position: relative;
   flex: 1;
 }
 
-.search-icon {
+.search_icon {
   position: absolute;
   left: 1rem;
   top: 50%;
@@ -27,7 +27,7 @@
   pointer-events: none;
 }
 
-.search-input {
+.search_input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.5rem;
   border: 1px solid #e5e7eb;
@@ -38,17 +38,17 @@
   background-color: white;
 }
 
-.search-input:focus {
+.search_input:focus {
   outline: none;
   border-color: #059669;
   box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.1);
 }
 
-.search-input::placeholder {
+.search_input::placeholder {
   color: #9ca3af;
 }
 
-.location-filter select {
+.location_filter select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@
   padding-right: 2.5rem;
 }
 
-.no-results {
+.no_results {
   text-align: center;
   padding: 2rem;
   color: #6b7280;
@@ -65,14 +65,14 @@
 }
 
 /* Leaderboard styles */
-.leaderboard-container {
+.leaderboard_container {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1rem;
 }
 
-.leaderboard-item {
+.leaderboard_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,76 +83,40 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.leaderboard-item:hover {
+.leaderboard_item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.volunteer-info {
+.volunteer_info {
   display: flex;
   align-items: center;
   gap: 1rem;
   flex: 1;
 }
 
-.volunteer-info h3 {
+.volunteer_info h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
   color: #1f2937;
 }
 
-.volunteer-info p {
+.volunteer_info p {
   margin: 0;
   color: #6b7280;
   font-size: 0.875rem;
 }
 
-
-
-
-/* Input and Select styles */
-input[type='text'],
-input[type='date'],
-input[type='email'],
-input[type='password'],
-input[type='number'],
-select {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-color);
-  transition: all 0.2s;
-  background-color: white;
-}
-input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.1);
-}
-input::placeholder,
-select::placeholder {
-  color: var(--text-secondary);
-}
-input:disabled,
-select:disabled {
-  background-color: var(--hover-color);
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
 /* Volunteers management styles */
-.volunteers-list {
+.volunteers_list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.volunteer-item {
+.volunteer_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,25 +126,25 @@ select:disabled {
   background-color: white;
 }
 
-.volunteer-info h3 {
+.volunteer_info h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
   color: #1f2937;
 }
 
-.volunteer-info p {
+.volunteer_info p {
   margin: 0.25rem 0 0;
   color: #6b7280;
   font-size: 0.875rem;
 }
 
-.volunteer-actions {
+.volunteer_actions {
   display: flex;
   gap: 0.5rem;
 }
 
-.action-btn {
+.action_btn {
   padding: 0.5rem;
   border: none;
   border-radius: 0.375rem;
@@ -191,21 +155,21 @@ select:disabled {
   transition: background-color 0.2s;
 }
 
-.edit-btn {
+.edit_btn {
   background-color: #dbeafe;
   color: #1e40af;
 }
 
-.edit-btn:hover {
+.edit_btn:hover {
   background-color: #bfdbfe;
 }
 
-.delete-btn {
+.delete_btn {
   background-color: #fee2e2;
   color: #b91c1c;
 }
 
-.delete-btn:hover {
+.delete_btn:hover {
   background-color: #fecaca;
 }
 
