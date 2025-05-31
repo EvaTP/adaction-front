@@ -29,11 +29,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-h1{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3em;
-  color: hotpink;
-}
 
 /* Footer */
 footer {
@@ -43,10 +38,10 @@ footer {
   text-align: center;
   padding: 0.5rem;
 }
-footer p{
+/* footer p{
   font-size: 0.875rem;
   margin-top: 0.25rem;
-}
+} */
 
 
 /* Input and Select styles */

@@ -12,20 +12,30 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 }
 .header_content {
   display: flex;
+  flex-direction : row;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
 .header_title {
-  font-size: 1.25rem;
+  display: flex;
+  flex-direction : row;
+  font-size: 1.75rem;
   font-weight: 700;
+  gap: 0.5rem;
 }
 .header_subtitle {
   text-align: center;
   color: #a7f3d0;
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin-top: 0.25rem;
 }
+/* Footer */
+.info_text{
+  font-size: 1.25rem;
+  margin: 1em;
+}
+
 /* Base styles */
 .app_container {
   min-height: 100vh;
@@ -191,6 +201,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+  font-size: 1.25em;
   font-weight: 500;
   transition: background-color 0.2s;
 }

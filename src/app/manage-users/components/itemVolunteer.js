@@ -20,20 +20,20 @@ export default function ItemVolunteer({ volunteer }) {
           // className={styles.logo}
           src="/pen.svg"
           alt="icon-edit"
-          width={160}
-          height={160}
+          width={40}
+          height={40}
           priority
         />
         </button>
         <button className={`${styles.action_btn} ${styles.delete_btn}`}>
-           <Image
+          <Image
           // className={styles.logo}
           src="/trash-red.svg"
           alt="icon-delete"
-          width={160}
-          height={160}
+          width={40}
+          height={40}
           priority
-        />
+          />
         </button>
       </div>
     </div>

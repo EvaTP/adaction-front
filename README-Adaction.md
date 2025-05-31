@@ -15,14 +15,14 @@ L’objectif principal du projet est d’avoir un back-end. La prise en main d�
 
 ## Fonctionnalités BACK-END
 [ ] Développer un back-end
-[ ] Mettre en place un CRUD
+✅  Mettre en place un CRUD
 [ ] Mettre en place une base de données
-[ ] Savoir concevoir le schéma d’une base de données relationnelles
-[ ] Savoir écrire des requêtes SQL
-[ ] Savoir utiliser un SGDBR (Neon pour Paris)
+✅  Savoir concevoir le schéma d’une base de données relationnelles
+✅  Savoir écrire des requêtes SQL
+✅ Savoir utiliser un SGDBR (Neon pour Paris)
 [ ] Savoir chiffrer un mot de passe
 [ ] Comprendre la configuration de son app
-[ ] L’utilité du package.json
+✅ L’utilité du package.json
 
 ## Fonctionnalités FRONT-END
 [ ] Développer en mobile-first

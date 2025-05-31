@@ -28,11 +28,20 @@ export default function VolunteersMgt(){
 
   return (
     <div className="app_container">
-      <header className="header"> 
-        <div className="header_content">
-          <h1 className="header_title">Adaction</h1>
+      <header className={layoutStyles.header}> 
+        <div className={layoutStyles.header_content}>
+          <p className={layoutStyles.header_title}>
+            <Image
+              // className={styles.logo}
+              src="/recycle.svg"
+              alt="icon-edit"
+              width={30}
+              height={30}
+              priority
+            />
+            Adaction</p>
         </div>  
-        <p className="header_subtitle">Agir pour un environnement plus propre</p>     
+        <p className={layoutStyles.header_subtitle}>Agir pour un environnement plus propre</p>     
       </header>
 
 	  <div>
@@ -51,7 +60,16 @@ export default function VolunteersMgt(){
     <main className={layoutStyles.main_content}>
       <div className={layoutStyles.card}>
         <div className={styles.volunteers_actions}>
-          <button className={layoutStyles.submit_btn}>Ajouter un.e bénévole</button>
+          <button className={layoutStyles.submit_btn}>
+             <Image
+              // className={styles.logo}
+              src="/user-plus.svg"
+              alt="icon-delete"
+              width={40}
+              height={40}
+              priority
+              />
+             Ajouter un.e bénévole</button>
           <div className={styles.search_filters}>
             <div className={styles.search_container}>
               <input placeholder="Rechercher un.e bénévole" className={styles.search_input} type="text"/>
@@ -79,7 +97,7 @@ export default function VolunteersMgt(){
       </div>
     </main>
 	  <footer>
-      <p className="info_text">🌱 Merci d'agir pour la planète. Vous faites partie du changement.</p>
+      <p className={layoutStyles.info_text}>🌱  Merci d'agir pour la planète. Vous faites partie du changement.</p>
       </footer>
     </div>
   );
