@@ -64,31 +64,6 @@
   font-size: 0.875rem;
 }
 
-/* Leaderboard styles */
-.leaderboard_container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.leaderboard_item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.leaderboard_item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Volunteers management styles */
 .volunteer_info {
   display: flex;
   align-items: center;

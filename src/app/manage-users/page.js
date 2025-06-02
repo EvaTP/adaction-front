@@ -33,7 +33,6 @@ export default function VolunteersMgt(){
         <div className={layoutStyles.header_content}>
           <p className={layoutStyles.header_title}>
             <Image
-              // className={styles.logo}
               src="/recycle.svg"
               alt="icon-edit"
               width={30}
@@ -48,10 +47,24 @@ export default function VolunteersMgt(){
 	  <div>
       <nav className={layoutStyles.navbar}>
         <div className={layoutStyles.navbar_container}>
-          <Link href="/manage_users" className={layoutStyles.navbar_link}>
+          <Link href="/manage-users" className={layoutStyles.navbar_link}>
+            <Image
+              src="/sprout.svg"
+              alt="icon-leaf"
+              width={25}
+              height={25}
+              priority
+              />
             <span>Gestion des bénévoles</span>
           </Link>
           <Link href="/leaderboard" className={layoutStyles.navbar_link}>
+          <Image
+              src="/trophy.svg"
+              alt="icon-trophy"
+              width={25}
+              height={25}
+              priority
+              />
             <span>Leaderboard</span>
           </Link>
         </div>
@@ -65,7 +78,7 @@ export default function VolunteersMgt(){
             onClick={()=> setShowModal(true)}>
              <Image
               src="/user-plus.svg"
-              alt="icon-delete"
+              alt="icon-addvolunteer"
               width={30}
               height={30}
               priority
@@ -133,8 +146,8 @@ export default function VolunteersMgt(){
     </div>
     )}
 
-	  <footer>
-      <p className={layoutStyles.info_text}>🌱  Merci d'agir pour la planète. Vous faites partie du changement.</p>
+	    <footer>
+        <p className={layoutStyles.info_text}>🌱  Merci d'agir pour la planète. Vous faites partie du changement.</p>
       </footer>
     </div>
   );
