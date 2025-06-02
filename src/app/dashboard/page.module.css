@@ -1,0 +1,96 @@
+/* Dashboard styles */
+.dashboard_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.month_navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+.month_nav_btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.month_nav_btn:hover:not(:disabled) {
+  background-color: var(--hover-color);
+}
+
+.month_nav_btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.current_month {
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+}
+
+.waste_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.waste_card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--border-color);
+}
+
+.waste_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.waste_icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.waste_info {
+  flex: 1;
+  min-width: 0;
+}
+
+.waste_info h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.waste_count {
+  margin: 0.25rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
