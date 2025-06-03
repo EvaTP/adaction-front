@@ -106,7 +106,7 @@
 .volunteer_info_p {
   margin: 0;
   color: #6b7280;
-  font-size: 0.900rem;
+  font-size: 0.9rem;
 }
 
 .volunteers_list {
@@ -159,4 +159,3 @@
 .delete_btn:hover {
   background-color: #fecaca;
 }
-
