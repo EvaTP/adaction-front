@@ -94,3 +94,33 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
+
+/* Badge colors */
+.badge_plastic {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+.badge_glass {
+  background-color: #dcfce7;
+  color: #166534;
+}
+.badge_metal {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+.badge_paper {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.badge_organic {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+.badge_electronic {
+  background-color: #e9d5ff;
+  color: #7c2d12;
+}
+.badge_other {
+  background-color: #fecaca;
+  color: #991b1b;
+}

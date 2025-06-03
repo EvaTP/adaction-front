@@ -40,42 +40,90 @@ export default function Dashboard(){
               </div>
               <div className={styles.waste_grid}>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={`${styles.waste_icon} ${styles.badge_organic}`}>
+                    <Image
+                        src="/waste-cigarette.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Mégots de cigarette</h3>
                     <p className={styles.waste_count}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={`${styles.waste_icon} ${styles.badge_plastic}`}>
+                    <Image
+                        src="/waste-plastic-package.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Plastique</h3>
                     <p className={styles.waste_count}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={`${styles.waste_icon} ${styles.badge_glass}`}>
+                    <Image
+                        src="/waste-glass-wine.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Verre</h3>
                     <p className={styles.waste_count}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={`${styles.waste_icon} ${styles.badge_metal}`}>
+                      <Image
+                        src="/waste-metal-trash.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Métal</h3>
-                    <p className={styles.waste_count}></p>
+                    <p className={`${styles.waste_icon} ${styles.badge_electronic}`}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={styles.waste_icon}>
+                      <Image
+                        src="/waste-smartphone.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Electronique</h3>
                     <p className={styles.waste_count}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
-                  <div className={styles.waste_icon}></div>
+                  <div className={`${styles.waste_icon} ${styles.badge_other}`}>
+                      <Image
+                        src="/waste-circle-help.svg"
+                        alt="icon-user"
+                        width={25}
+                        height={25}
+                        priority
+                        />
+                  </div>
                   <div className={styles.waste_info}>
                     <h3>Autre</h3>
                     <p className={styles.waste_count}></p>
