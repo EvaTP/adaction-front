@@ -131,7 +131,7 @@
   cursor: not-allowed;
 }
 
-/* Manage volunteers button (Gérer les bénévoles) */
+/* bouton "gérer les bénévoles" */
 .manage_btn {
   width: 100%;
   display: flex;

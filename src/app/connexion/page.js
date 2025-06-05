@@ -46,7 +46,6 @@ return (
         <main className={styles.main_content}>
             <div className={styles.card}>
                 <div className={styles.card_header}>
-                    
                     Connexion
                 </div>
                 
