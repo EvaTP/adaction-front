@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import styles from './page.module.css';
 
@@ -17,11 +17,11 @@ export default function LoginPage() {
     }));
   };
 
-  const handleLogin = (e) => {
+const handleLogin = (e) => {
     e.preventDefault();
-    // Logique de connexion
-    // console.log('Connexion:', formData);
-  };
+    // Redirection vers le dashboard après connexion
+    // window.location.href = '/dashboard';
+};
 
   const handleManageVolunteers = () => {
     // Redirection vers la gestion des bénévoles
