@@ -12,7 +12,7 @@ export default function Dashboard(){
 	const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(async () => {
+  useEffect(async() => {
     fetch("http://localhost:3001/volunteers")
       .then((res) => res.json())
       .then((data) => {
@@ -96,7 +96,7 @@ export default function Dashboard(){
                   </div>
                   <div className={styles.waste_info}>
                     <h3>Métal</h3>
-                    <p className={`${styles.waste_icon} ${styles.badge_electronic}`}></p>
+                     <p className={styles.waste_count}></p>
                   </div>
                 </div>
                 <div className={styles.waste_card}>
