@@ -1,0 +1,173 @@
+/* Header */
+.header {
+  background-color: #059669;
+  color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px #0000001a;
+}
+
+.header_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.header_title {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.75rem;
+  font-weight: 700;
+  gap: 0.5rem;
+}
+
+.header_subtitle {
+  text-align: center;
+  color: #a7f3d0;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Base styles */
+.app_container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Main content */
+.main_content {
+  padding: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card_header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+/* Form */
+.form_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form_label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.form_input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  transition: all 0.2s;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.1);
+}
+
+.form_input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* bouton "Se connecter" */
+.submit_btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.submit_btn:hover:not(:disabled) {
+  background-color: #047857;
+}
+
+.submit_btn:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+/* Manage volunteers button (Gérer les bénévoles) */
+.manage_btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--text-secondary);
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.manage_btn:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+/* Footer */
+.info_text {
+  font-size: 0.875rem;
+  margin: 2rem 1rem 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Responsive design */
+@media (min-width: 600px) {
+  .main_content {
+    padding: 3rem 0.5rem 2rem;
+  }
+  
+  .card {
+    padding: 2rem;
+  }
+}
