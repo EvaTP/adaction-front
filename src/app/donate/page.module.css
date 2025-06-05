@@ -1,0 +1,59 @@
+/* src/app/donate/page.module.css */
+
+/* Styles pour le titre principal de la page */
+.pageTitle {
+  text-align: center;
+  margin-top: 40px; /* Espace au-dessus du titre */
+  margin-bottom: 60px; /* Espace en dessous du titre */
+  font-size: 3rem; /* Taille de police plus grande */
+  color: #333; /* Couleur de texte sombre */
+  font-weight: 700; /* Gras */
+  letter-spacing: -0.02em; /* Espacement des lettres */
+}
+
+/* Styles pour la grille des associations */
+.associationsGrid {
+  display: grid;
+  /* Crée une grille réactive: chaque colonne fait au moins 300px, prend autant d'espace que possible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Espacement entre les cartes */
+  max-width: 1200px; /* Largeur maximale de la grille */
+  margin: 0 auto 80px auto; /* Centre la grille et ajoute de l'espace en dessous */
+  padding: 0 20px; /* Padding sur les côtés pour les petits écrans */
+}
+
+/* Styles pour chaque carte d'association */
+.associationCard {
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 12px; /* Coins arrondis */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Ombre portée douce */
+  padding: 25px; /* Espacement intérieur */
+  text-align: center;
+  display: flex; /* Utilise Flexbox pour un meilleur contrôle du contenu */
+  flex-direction: column; /* Contenu empilé verticalement */
+  justify-content: space-between; /* Pour pousser le bouton vers le bas */
+  height: 100%; /* S'assure que toutes les cartes ont la même hauteur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+}
+
+.associationCard:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+
+/* Styles pour l'image de l'association (si vous en avez une) */
+.associationImage {
+  width: 100%;
+  height: 180px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Recadre l'image pour couvrir l'espace */
+  border-radius: 8px; /* Coins arrondis pour l'image */
+  margin-bottom: 20px;
+}
+
+/* Styles pour le nom de l'association */
+.associationName {
+  font-size: 1.8rem;
+  color: #0070f3; /* Couleur primaire (bleu, comme AdAction) */
+  margin-bottom: 10px;
+  font-weight: 600
+}
