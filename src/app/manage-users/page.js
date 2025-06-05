@@ -13,7 +13,7 @@ export default function VolunteersMgt() {
   const [isLoading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
+  useEffect(async () => {
     fetch("http://localhost:3001/volunteers")
       .then((res) => res.json())
       .then((data) => {

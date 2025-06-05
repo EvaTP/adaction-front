@@ -12,7 +12,7 @@ export default function Dashboard(){
 	const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(async () => {
     fetch("http://localhost:3001/volunteers")
       .then((res) => res.json())
       .then((data) => {
