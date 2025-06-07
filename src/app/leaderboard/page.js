@@ -12,14 +12,29 @@ export default function VolunteersLeaderboard() {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(async () => {
-    fetch("http://localhost:3001/volunteers")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(async () => {
+  //   fetch("http://localhost:3001/volunteers")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/leaderboard");
+      const data = await res.json();
+      setData(data);
+    } catch (error) {
+      console.error("Erreur lors du fetch :", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchData();
+}, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;

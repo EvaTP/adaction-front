@@ -12,7 +12,7 @@ export default function ItemLeaderboard({ volunteer }) {
           {volunteer.firstname}
         </h3>
         <p className={styles.volunteer_info_p}>
-          {volunteer.total_points} points</p>
+          {volunteer.total_collections} collectes</p>
       </div>
     </div>
   );

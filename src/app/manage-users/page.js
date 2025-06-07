@@ -10,20 +10,101 @@ import { useState, useEffect } from "react";
 
 export default function VolunteersMgt() {
   const [data, setData] = useState(null);
+  const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState('');
   const [isLoading, setLoading] = useState(true);
+  // AJOUTER UN BENEVOLE (formulaire modale)
   const [showModal, setShowModal] = useState(false);
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [location, setLocation] = useState('');
 
-  useEffect(async () => {
-    fetch("http://localhost:3001/volunteers")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(async () => {
+  //   fetch("http://localhost:3001/volunteers")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/volunteers");
+      const data = await res.json();
+      setData(data);
+    } catch (error) {
+      console.error("Erreur lors du fetch :", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchData();
+}, []);
+
+useEffect(() => {
+  const fetchCities = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/cities");
+      const data = await res.json();
+      setCities(data);
+    } catch (error) {
+      console.error("Erreur lors du fetch des villes :", error);
+    }
+  };
+  fetchCities();
+}, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
+
+  // On filtre les bénévoles selon la ville sélectionnée
+  const filteredVolunteers = selectedCity
+    ? data.filter((volunteer) => volunteer.location === selectedCity)
+    : data;
+
+  // soumission du formulaire (modale) "ajouter un bénévole" 
+  const handleAddVolunteer = async (e) => {
+    e.preventDefault();
+
+  const newVolunteer = { firstname, lastname, email, password, location };
+
+  try {
+    const res = await fetch("http://localhost:3001/volunteers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newVolunteer),
+    });
+
+    if (!res.ok) {
+      throw new Error("Erreur lors de l'ajout du bénévole");
+    }
+
+    // Réinitialise les champs et masque la modale après soumission
+    setFirstname('');
+    setLastname('');
+    setEmail('');
+    setPassword('');
+    setLocation('');
+    setShowModal(false);
+
+    // Re-fetch des bénévoles pour mettre à jour la liste
+    setLoading(true);
+    const volunteersRes = await fetch("http://localhost:3001/volunteers");
+    const volunteersData = await volunteersRes.json();
+    setData(volunteersData);
+    setLoading(false);
+
+  } catch (error) {
+    console.error(error);
+    alert("Impossible d'ajouter le bénévole, réessayez.");
+  }
+};
 
   return (
     <div className="app_container">
@@ -97,8 +178,19 @@ export default function VolunteersMgt() {
                 />
               </div>
               <div className={styles.location_filter}>
-                <select className={styles.search_input}>
-                  <option value>Toutes les villes</option>
+                <select
+                className={styles.search_input}
+                value = {selectedCity}
+                onChange={(e) => setSelectedCity(e.target.value)}
+                >
+                <option value="">Toutes les villes</option>
+                {cities.map((city)=>(
+                   <option key={city.id} value={city.name}>
+                  {city.name}
+                </option>
+                ))}
+                </select>
+                  {/* 
                   <option value="Paris">Paris</option>
                   <option value="Lyon">Lyon</option>
                   <option value="Bordeaux">Bordeaux</option>
@@ -107,13 +199,12 @@ export default function VolunteersMgt() {
                   <option value="Marseille">Marseille</option>
                   <option value="Nice">Nice</option>
                   <option value="Lille">Lille</option>
-                  <option value="Montpellier">Montpellier</option>
-                </select>
+                  <option value="Montpellier">Montpellier</option> */}
               </div>
             </div>
 
-            {data.map((volunteer) => (
-              <ItemVolunteer key={volunteer.firstname} volunteer={volunteer} />
+            {filteredVolunteers.map((volunteer) => (
+              <ItemVolunteer key={volunteer.id} volunteer={volunteer} />
             ))}
           </div>
         </div>
@@ -123,33 +214,58 @@ export default function VolunteersMgt() {
         <div className={layoutStyles.modal_overlay}>
           <div className={layoutStyles.modal}>
             <h3>Ajouter un.e bénévole</h3>
-            <form className={layoutStyles.form_container}>
+            <form className={layoutStyles.form_container} onSubmit={handleAddVolunteer}>
               <div>
                 <label className={layoutStyles.form_label}>Prénom</label>
-                <input required type="text"></input>
+                 <input
+                  required
+                  type="text"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                />
               </div>
               <div>
                 <label className={layoutStyles.form_label}>Nom</label>
-                <input required type="text"></input>
+                 <input
+                    required
+                    type="text"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
+                  />
               </div>
               <div>
                 <label className={layoutStyles.form_label}>Email</label>
-                <input required type="email"></input>
+                 <input
+                    required
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
               </div>
               <div>
                 <label className={layoutStyles.form_label}>Mot de passe</label>
-                <input required type="password"></input>
+                 <input
+                    required
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
               </div>
               <div>
                 <label className={layoutStyles.form_label}>Localisation</label>
-                <input required type="text"></input>
+                 <input
+                    required
+                    type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                  />
               </div>
               <div className={layoutStyles.modal_actions}>
                 <button type="submit" className={layoutStyles.submit_btn}>
                   Ajouter
                 </button>
                 <button
-                  type="submit"
+                  type="button"
                   onClick={() => setShowModal(false)}
                   className={layoutStyles.cancel_btn}
                 >
