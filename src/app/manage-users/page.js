@@ -20,6 +20,9 @@ export default function VolunteersMgt() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [location, setLocation] = useState('');
+  // MODIFIER UN BENEVOLE
+  const [isEditing, setIsEditing] = useState(false);
+  const [editVolunteerId, setEditVolunteerId] = useState(null);
 
   // useEffect(async () => {
   //   fetch("http://localhost:3001/volunteers")
@@ -67,22 +70,33 @@ useEffect(() => {
     : data;
 
   // soumission du formulaire (modale) "ajouter un bénévole" 
-  const handleAddVolunteer = async (e) => {
+  const handleSubmitVolunteer = async (e) => {
     e.preventDefault();
 
-  const newVolunteer = { firstname, lastname, email, password, location };
+  let volunteerData = { firstname, lastname, email, location };
+    if(!isEditing){
+      volunteerData.password=password;}  // ajoute password que si on n'est PAS en édition
+   
+  const method = isEditing ? "PATCH" : "POST";
+  const url = isEditing
+    ? `http://localhost:3001/volunteers/${editVolunteerId}`
+    : "http://localhost:3001/volunteers";
 
   try {
-    const res = await fetch("http://localhost:3001/volunteers", {
-      method: "POST",
+    const res = await fetch(url, {
+      method,
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newVolunteer),
+      body: JSON.stringify(volunteerData),
     });
 
+console.log("Requête:", method, url);
+console.log("Données envoyées :", volunteerData);
+console.log("Statut réponse:", res.status);
+
     if (!res.ok) {
-      throw new Error("Erreur lors de l'ajout du bénévole");
+      throw new Error("Erreur lors de l'enregistrement du bénévole");
     }
 
     // Réinitialise les champs et masque la modale après soumission
@@ -92,19 +106,48 @@ useEffect(() => {
     setPassword('');
     setLocation('');
     setShowModal(false);
+    setIsEditing(false);
+    setEditVolunteerId(null);
 
     // Re-fetch des bénévoles pour mettre à jour la liste
-    setLoading(true);
-    const volunteersRes = await fetch("http://localhost:3001/volunteers");
-    const volunteersData = await volunteersRes.json();
-    setData(volunteersData);
-    setLoading(false);
-
+    const refreshed = await fetch("http://localhost:3001/volunteers");
+    setData (await refreshed.json());
   } catch (error) {
     console.error(error);
-    alert("Impossible d'ajouter le bénévole, réessayez.");
+    alert("Impossible de sauvegarder le bénévole.");
   }
 };
+const handleEdit = (volunteer) => {
+  setFirstname(volunteer.firstname);
+  setLastname(volunteer.lastname);
+  setEmail(volunteer.email);
+  setPassword('');
+  setLocation(volunteer.location);
+  setEditVolunteerId(volunteer.id);
+  setIsEditing(true);
+  setShowModal(true);
+};
+
+// SUPPRIMER
+const handleDelete = async (volunteer) => {
+  const confirmDelete = confirm(`Supprimer ${volunteer.firstname} ${volunteer.lastname} ?`);
+  if (!confirmDelete) return;
+
+  try {
+    const res = await fetch(`http://localhost:3001/volunteers/${volunteer.id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) throw new Error("Erreur serveur");
+
+    // mise à jour locale
+    setData(prev => prev.filter(v => v.id !== volunteer.id));
+  } catch (err) {
+    console.error(err);
+    alert("Erreur lors de la suppression");
+  }
+};
+
 
   return (
     <div className="app_container">
@@ -190,21 +233,15 @@ useEffect(() => {
                 </option>
                 ))}
                 </select>
-                  {/* 
-                  <option value="Paris">Paris</option>
-                  <option value="Lyon">Lyon</option>
-                  <option value="Bordeaux">Bordeaux</option>
-                  <option value="Strasbourg">Strasbourg</option>
-                  <option value="Nantes">Nantes</option>
-                  <option value="Marseille">Marseille</option>
-                  <option value="Nice">Nice</option>
-                  <option value="Lille">Lille</option>
-                  <option value="Montpellier">Montpellier</option> */}
               </div>
             </div>
 
             {filteredVolunteers.map((volunteer) => (
-              <ItemVolunteer key={volunteer.id} volunteer={volunteer} />
+              <ItemVolunteer
+              key={volunteer.id}
+              volunteer={volunteer}
+              onEdit={handleEdit}
+              onDelete={handleDelete}/>
             ))}
           </div>
         </div>
@@ -214,7 +251,7 @@ useEffect(() => {
         <div className={layoutStyles.modal_overlay}>
           <div className={layoutStyles.modal}>
             <h3>Ajouter un.e bénévole</h3>
-            <form className={layoutStyles.form_container} onSubmit={handleAddVolunteer}>
+            <form className={layoutStyles.form_container} onSubmit={handleSubmitVolunteer}>
               <div>
                 <label className={layoutStyles.form_label}>Prénom</label>
                  <input
@@ -242,7 +279,9 @@ useEffect(() => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
               </div>
-              <div>
+              {/* le mot de passe est obligatoire en mode AJOUT mais pas en EDITION */}
+              {!isEditing &&(
+                 <div>
                 <label className={layoutStyles.form_label}>Mot de passe</label>
                  <input
                     required
@@ -251,6 +290,7 @@ useEffect(() => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
               </div>
+              )}
               <div>
                 <label className={layoutStyles.form_label}>Localisation</label>
                  <input
@@ -262,7 +302,7 @@ useEffect(() => {
               </div>
               <div className={layoutStyles.modal_actions}>
                 <button type="submit" className={layoutStyles.submit_btn}>
-                  Ajouter
+                  {isEditing ? "Modifier" : "Ajouter"}
                 </button>
                 <button
                   type="button"

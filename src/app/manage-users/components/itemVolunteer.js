@@ -4,7 +4,7 @@ import styles from "../page.module.css";
 import layoutStyles from "../../styles/layout.module.css";
 import { useState, useEffect } from "react";
 
-export default function ItemVolunteer({ volunteer }) {
+export default function ItemVolunteer({ volunteer, onEdit, onDelete }) {
   return (
     <div className={styles.volunteer_item}>
       <div className={styles.volunteer_info}>
@@ -16,7 +16,8 @@ export default function ItemVolunteer({ volunteer }) {
       </div>
 
       <div className={styles.volunteer_actions}>
-        <button className={`${styles.action_btn} ${styles.edit_btn}`}>
+        <button className={`${styles.action_btn} ${styles.edit_btn}`}
+        onClick={()=> onEdit(volunteer)}>
            <Image
           src="/pen.svg"
           alt="icon-edit"
@@ -25,7 +26,8 @@ export default function ItemVolunteer({ volunteer }) {
           priority
         />
         </button>
-        <button className={`${styles.action_btn} ${styles.delete_btn}`}>
+        <button className={`${styles.action_btn} ${styles.delete_btn}`}
+          onClick={()=> onDelete(volunteer)}>
           <Image
           src="/trash-red.svg"
           alt="icon-delete"
