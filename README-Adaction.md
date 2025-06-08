@@ -14,42 +14,42 @@ L’objectif principal du projet est d’avoir un back-end. La prise en main d�
 
 
 ## Fonctionnalités BACK-END
-[ ] Développer un back-end
+✅  Développer un back-end
 ✅  Mettre en place un CRUD
-[ ] Mettre en place une base de données
+✅  Mettre en place une base de données
 ✅  Savoir concevoir le schéma d’une base de données relationnelles
 ✅  Savoir écrire des requêtes SQL
 ✅ Savoir utiliser un SGDBR (Neon pour Paris)
 [ ] Savoir chiffrer un mot de passe
 [ ] Comprendre la configuration de son app
-✅ L’utilité du package.json
+✅  L’utilité du package.json
 
 ## Fonctionnalités FRONT-END
 [ ] Développer en mobile-first
-[ ] Mettre en place un site interactif
-[ ] Savoir GET des données
-[ ] Savoir POST des données
-[ ] Savoir PUT ou PATCH des données
-[ ] Savoir DELETE des données
-[ ] Adopter un framework
-[ ] Savoir utiliser un gestionnaire de paquets
-[ ] Savoir créer des composants
-[ ] Savoir utiliser des props
-[ ] Savoir utiliser des states
+✅  Mettre en place un site interactif
+✅  Savoir GET des données
+✅  Savoir POST des données
+✅  Savoir PUT ou PATCH des données
+✅  Savoir DELETE des données
+✅  Adopter un framework [NEXT.JS, EXPRES.JS]
+✅  Savoir utiliser un gestionnaire de paquets
+✅  Savoir créer des composants
+✅  Savoir utiliser des props
+✅  Savoir utiliser des states
 [ ] BONUS : Savoir utiliser des hooks 🪝 
 
 # Git
 [ ] Savoir créer et travailler avec des branches
-[ ] Savoir merge : savoir régler des conflits
-[ ] Savoir rebase
+✅  Savoir merge : savoir régler des conflits
+✅  Savoir rebase
 
 # 💙 BONUS+
-[ ] (Niveau 1+) Déployer son back-end en production avec Vercel (solution gratuite)
+✅ (Niveau 1+) Déployer son back-end en production avec Vercel (solution gratuite)
 [ ] (Niveau 1+) Développer l’authentification
 [ ] (Niveau 2) Mettre en place un middleware
-[ ] (Niveau 3) Utiliser un ORM (Paris : Prisma)
+❌  (Niveau 3) Utiliser un ORM (Paris : Prisma)
 [ ] (Niveau 1) Intégrer des règles d’accessibilité et d’éco-conception
-[ ] (Niveau 1) Utiliser un framework CSS tel que Tailwind
+❌  (Niveau 1) Utiliser un framework CSS tel que Tailwind
 
 # 📥 Rendu
 Ce qui est attendu :
@@ -91,20 +91,20 @@ Pouvoir enregistrer une collecte (bénévole responsable, date, lieu)
 
 
 # ⚙️ 3. Vue ASSOCIATION : Gestion des bénévoles
-Développer une page qui permet de lister tous les bénévoles
+✅  Développer une page qui permet de lister tous les bénévoles
 Il sera possible de :
-- Filtrer les bénévoles par localisation
+✅ - Filtrer les bénévoles par localisation
 - 💙 [BONUS] : Retrouver un bénévole au travers d’une recherche par nom
 Développer les fonctionnalités suivante :
-- Pouvoir ajouter un compte bénévole
-- Pouvoir modifier un compte bénévole
-- Pouvoir supprimer un compte bénévole
+✅ - Pouvoir ajouter un compte bénévole
+✅ - Pouvoir modifier un compte bénévole
+✅ - Pouvoir supprimer un compte bénévole
 
 # ⚙️ 4. Vue ASSOCIATION : Tableau de bord
 Développer une vue qui permet à l’association de suivre les statistiques des collectes
-- Voir le total de déchets collectés
-- Filtrer par date (mois, année)
-- Filtrer par lieu (ville ou région)
+✅ - Voir le total de déchets collectés
+❌ - Filtrer par date (mois, année)
+✅ - Filtrer par lieu (ville ou région)
 
  ### 💙 Les BONUS 💪
 # 💙 [BONUS] Gamification : dépense des points collectés
