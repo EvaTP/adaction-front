@@ -44,7 +44,7 @@ export default function ItemNavbar() {
               />
             <span>Collectes</span>
           </Link>
-		  <Link href="/#" className={layoutStyles.navbar_link}>
+		  <Link href="/donate" className={layoutStyles.navbar_link}>
             <Image
               src="/heart.svg"
               alt="icon-heart"
