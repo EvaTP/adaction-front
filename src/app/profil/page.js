@@ -109,7 +109,7 @@ const handleLogout = () => {
                 <label className={layoutStyles.form_label}>Nom</label>
                  <input
                     placeholder = "Votre nom"
-					required
+					          required
                     type="text"
                     value={lastname}
                     onChange={(e) => setLastname(e.target.value)}
@@ -119,14 +119,14 @@ const handleLogout = () => {
                 <label className={layoutStyles.form_label}>Localisation</label>
                  <input
                     placeholder = "Votre ville"
-					required
+					          required
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
               </div>
-              <div className={layoutStyles.modal_actions}>
-                <button type="submit" className={layoutStyles.submit_btn}>
+          <div className={layoutStyles.profil_actions}>
+          <button type="submit" className={layoutStyles.submit_btn}>
 					<Image
 						src="/save.svg"
 						alt="icon-save"
@@ -134,9 +134,9 @@ const handleLogout = () => {
 						height={30}
 						priority
 						/>
-                	Mise à jour
+            Mise à jour
 				</button>
-				<button type="button" className={layoutStyles.submit_btn.logout_btn}
+				<button type="button" className={`${layoutStyles.submit_btn} ${layoutStyles.logout_btn}`}
 				onClick={handleLogout}
 				>
 					<Image
@@ -146,10 +146,10 @@ const handleLogout = () => {
 						height={30}
 						priority
 						/>
-                	Déconnexion
+            Déconnexion
 				</button>
-              </div>
-            </form>
+        </div>
+        </form>
         </div>
       </div>
 
