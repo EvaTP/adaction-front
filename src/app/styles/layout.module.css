@@ -461,6 +461,13 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   gap: 0.5rem;
   margin-top: 1rem;
 }
+/* page PROFIL */
+.profil_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
 
 .modal_actions .submit-btn {
   flex: 1;
