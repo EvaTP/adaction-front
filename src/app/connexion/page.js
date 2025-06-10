@@ -18,37 +18,37 @@ export default function LoginPage() {
   const [success, setSuccess] = useState('');
 
   // Fonction pour récupérer l'utilisateur en dur (Julien)
-  const fetchHardcodedUser = async () => {
-    setLoading(true);
-    setError('');
-    setSuccess('');
+  // const fetchHardcodedUser = async () => {
+  //   setLoading(true);
+  //   setError('');
+  //   setSuccess('');
     
-    try {
-      const res = await fetch("http://localhost:3001/connexion", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}) // Corps vide car données en dur côté serveur
-      });
+  //   try {
+  //     const res = await fetch("http://localhost:3001/connexion", {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({}) // Corps vide car données en dur côté serveur
+  //     });
       
-      if (res.ok) {
-        const userData = await res.json();
-        setData(userData);
-        setSuccess(<span className={layoutStyles.success_message}>Bonjour Julien ! 😃</span>);
-        router.push('/dashboard');
+  //     if (res.ok) {
+  //       const userData = await res.json();
+  //       setData(userData);
+  //       setSuccess(<span className={layoutStyles.success_message}>Bonjour Julien ! 😃</span>);
+  //       router.push('/dashboard');
     
-      } else {
-        const errorData = await res.json();
-        setError(errorData.message || 'Erreur lors de la récupération');
-      }
-    } catch (error) {
-      console.error("Erreur lors du fetch :", error);
-      setError('Erreur de connexion au serveur');
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     } else {
+  //       const errorData = await res.json();
+  //       setError(errorData.message || 'Erreur lors de la récupération');
+  //     }
+  //   } catch (error) {
+  //     console.error("Erreur lors du fetch :", error);
+  //     setError('Erreur de connexion au serveur');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   // Fonction pour gérer la connexion avec le formulaire
   const handleLogin = async (e) => {
@@ -72,6 +72,7 @@ export default function LoginPage() {
       if (res.ok) {
         const userData = await res.json();
         setData(userData);
+        localStorage.setItem('firstName', userData.firstname);
         setSuccess('Connexion réussie !');
 
          setTimeout(() => {
@@ -165,7 +166,7 @@ export default function LoginPage() {
             </div>
 
             <button type="submit"
-                onClick={fetchHardcodedUser} 
+                // onClick={fetchHardcodedUser} 
                 className={styles.submit_btn} 
                 disabled={isLoading}
                 >

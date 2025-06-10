@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 export default function Dashboard(){
 	const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
+  const [firstName, setFirstName] = useState('');
 
 useEffect(() => {
   const fetchData = async () => {
@@ -27,6 +28,12 @@ useEffect(() => {
   fetchData();
 }, []);
 
+useEffect(() => {
+  const storedName = localStorage.getItem('firstName');
+  if (storedName) {
+    setFirstName(storedName);
+  }
+}, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
@@ -39,7 +46,7 @@ useEffect(() => {
       <div className={layoutStyles.main_content}>
         <div className={layoutStyles.card}>
           <div className={styles.dashboard_header}>
-              <h2 className={styles.card_header}>Bonjour{} !</h2>
+              <h2 className={layoutStyles.card_header}>Bonjour {firstName} 👋 !</h2>
               <div className={styles.month_navigation}>
                 <button className={styles.month_nav_btn}>Previous</button>
                   <span className={styles.current_month}></span>
