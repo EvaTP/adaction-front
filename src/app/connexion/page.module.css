@@ -122,6 +122,25 @@
   margin-top: 0.5rem;
 }
 
+/* .test_btn {
+    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem; */
+  /* background-color: var(--primary-color); */
+  /* background-color: red;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+} */
+
 .submit_btn:hover:not(:disabled) {
   background-color: #047857;
 }
