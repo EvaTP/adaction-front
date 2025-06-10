@@ -1,15 +1,30 @@
 /* src/app/donate/page.module.css */
 
-.golbal{
-
-display: flex;
-align-items: column;
+.global {
+  width: 100%; /* Sur mobile, prend toute la largeur */
+  padding: 1rem; /* Moins de padding sur mobile */
+  background-color: lightblue; /* Exemple de couleur pour mobile */
+  /* Tes autres styles par défaut pour .global ici */
 }
 
-/* .donateButton{
+/* --- Media query pour les écrans de 600px et plus (MODIFIE les styles mobiles) --- */
+@media (min-width: 600px) {
+  .global {
+    width: 30%; /* Pour les écrans de 600px et plus, utilise 90% de la largeur */
+    max-width: 1200px; /* Ajoute une largeur maximale pour ne pas être trop large sur grand écran */
+    margin: 0 auto; /* Centre-le */
+    padding: 2rem; /* Plus de padding sur les grands écrans */
+    background-color: rgb(232, 236, 232); /* Exemple de couleur pour les grands écrans */
+    border-radius: 15px;
+    margin-top: 40px;
+    padding-top: 10px;
+}
+}
 
-    font-size: 0.8em;
-} */
+
+
+
+
 /* Styles pour le titre principal de la page */
 .pageTitle {
   font-size: 0.8em;

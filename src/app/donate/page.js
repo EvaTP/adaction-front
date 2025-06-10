@@ -57,10 +57,10 @@ export default function DonatePage() {
 
     
     <div className={layoutStyles.container}> {/* Ou un div simple si layoutStyles.container n'est pas nécessaire */}
-      <ItemNavbar /> {/* la barre de navigation */}
+      <ItemNavbar /> 
     <div className={styles.global}>
-      <h1 className={styles.pageTitle}>Faire un Don</h1> {/* Appliquez vos styles ici */}
-
+      <h6 className={styles.pageTitle}>Faire un Don</h6> {/* Appliquez vos styles ici */}
+      
       {/* Grid pour les cartes d'associations */}
       <div className={styles.associationsGrid}>
         {associations.length > 0 ? (
@@ -89,6 +89,10 @@ export default function DonatePage() {
         )}
       </div>
       </div>
+       <footer>
+        <p className={layoutStyles.info_text}>🌱  Merci d'agir pour la planète. Vous faites partie du changement.</p>
+      </footer>
     </div>
   );
 }
+
