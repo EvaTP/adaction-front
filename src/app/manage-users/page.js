@@ -23,6 +23,7 @@ export default function VolunteersMgt() {
   // MODIFIER UN BENEVOLE
   const [isEditing, setIsEditing] = useState(false);
   const [editVolunteerId, setEditVolunteerId] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
 
   // useEffect(async () => {
   //   fetch("http://localhost:3001/volunteers")
@@ -60,6 +61,16 @@ useEffect(() => {
   };
   fetchCities();
 }, []);
+
+useEffect(() => {
+  if (successMessage) {
+    const timer = setTimeout(() => {
+      setSuccessMessage('');
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }
+}, [successMessage]);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
@@ -108,6 +119,7 @@ console.log("Statut réponse:", res.status);
     setShowModal(false);
     setIsEditing(false);
     setEditVolunteerId(null);
+    setSuccessMessage(isEditing ? "✅ Bénévole modifié avec succès." : "✅ Bénévole ajouté avec succès.");
 
     // Re-fetch des bénévoles pour mettre à jour la liste
     const refreshed = await fetch("http://localhost:3001/volunteers");
@@ -195,6 +207,12 @@ const handleDelete = async (volunteer) => {
           </div>
         </nav>
       </div>
+
+      {successMessage && (
+      <div className={layoutStyles.success_message}>
+        {successMessage}
+      </div>
+      )}
 
       <main className={layoutStyles.main_content}>
         <div className={layoutStyles.card}>
@@ -316,7 +334,7 @@ const handleDelete = async (volunteer) => {
           </div>
         </div>
       )}
-
+      
       <footer>
         <p className={layoutStyles.info_text}>
           🌱 Merci d'agir pour la planète. Vous faites partie du changement.
