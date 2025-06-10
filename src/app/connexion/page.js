@@ -76,7 +76,7 @@ export default function LoginPage() {
 
          setTimeout(() => {
           router.push('/dashboard');
-        }, 2000);
+        }, 3500);
 
       } else {
         const errorData = await res.json();
