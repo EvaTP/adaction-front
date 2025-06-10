@@ -54,9 +54,11 @@ export default function DonatePage() {
   }
 
   return (
-    <div className={layoutStyles.container}> {/* Ou un div simple si layoutStyles.container n'est pas nécessaire */}
-      <ItemNavbar /> {/* Votre barre de navigation */}
 
+    
+    <div className={layoutStyles.container}> {/* Ou un div simple si layoutStyles.container n'est pas nécessaire */}
+      <ItemNavbar /> {/* la barre de navigation */}
+    <div className={styles.global}>
       <h1 className={styles.pageTitle}>Faire un Don</h1> {/* Appliquez vos styles ici */}
 
       {/* Grid pour les cartes d'associations */}
@@ -85,6 +87,7 @@ export default function DonatePage() {
         ) : (
           <p>Aucune association disponible pour le moment.</p>
         )}
+      </div>
       </div>
     </div>
   );

@@ -1,7 +1,18 @@
 /* src/app/donate/page.module.css */
 
+.golbal{
+
+display: flex;
+align-items: column;
+}
+
+/* .donateButton{
+
+    font-size: 0.8em;
+} */
 /* Styles pour le titre principal de la page */
 .pageTitle {
+  font-size: 0.8em;
   text-align: center;
   margin-top: 40px; /* Espace au-dessus du titre */
   margin-bottom: 60px; /* Espace en dessous du titre */
@@ -26,7 +37,7 @@
 .associationCard {
   background-color: #ffffff; /* Fond blanc */
   border-radius: 12px; /* Coins arrondis */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Ombre portée douce */
+  box-shadow: 0 10px 30px rgba(133, 130, 130, 0.08); /* Ombre portée douce */
   padding: 25px; /* Espacement intérieur */
   text-align: center;
   display: flex; /* Utilise Flexbox pour un meilleur contrôle du contenu */
@@ -38,7 +49,7 @@
 
 .associationCard:hover {
   transform: translateY(-5px); /* Légère élévation au survol */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+  box-shadow: 0 15px 40px rgba(126, 124, 124, 0.15); /* Ombre plus prononcée au survol */
 }
 
 /* Styles pour l'image de l'association (si vous en avez une) */
@@ -53,7 +64,7 @@
 /* Styles pour le nom de l'association */
 .associationName {
   font-size: 1.8rem;
-  color: #0070f3; /* Couleur primaire (bleu, comme AdAction) */
+  color: #090909; /* Couleur primaire (bleu, comme AdAction) */
   margin-bottom: 10px;
   font-weight: 600
 }
