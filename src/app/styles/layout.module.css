@@ -57,7 +57,7 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
   padding: 1rem;
 }
 .card_header {
-  font-size: 1.125rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--text-color);
   margin-bottom: 0.5rem;
