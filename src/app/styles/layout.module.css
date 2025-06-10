@@ -85,6 +85,8 @@ Unlike in globals.css, the classes defined in layout.module.css are locally scop
 /* Success message */
 .success_message {
   background-color: #10b981;
+  border-radius: 5px;
+  font-size : 2em;
   color: white;
   padding: 0.75rem;
   text-align: center;

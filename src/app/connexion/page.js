@@ -2,9 +2,11 @@
 import { useState } from 'react';
 import Image from "next/image";
 import styles from './page.module.css';
-import { redirect } from 'next/dist/server/api-utils';
+import layoutStyles from "../styles/layout.module.css";
+import { useRouter } from 'next/navigation'
 
 export default function LoginPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
     password: ''
@@ -33,7 +35,9 @@ export default function LoginPage() {
       if (res.ok) {
         const userData = await res.json();
         setData(userData);
-        setSuccess('Utilisateur Julien récupéré avec succès !');
+        setSuccess(<span className={layoutStyles.success_message}>Bonjour Julien ! 😃</span>);
+        router.push('/dashboard');
+    
       } else {
         const errorData = await res.json();
         setError(errorData.message || 'Erreur lors de la récupération');
@@ -54,7 +58,7 @@ export default function LoginPage() {
     setSuccess('');
     
     try {
-      const res = await fetch("http://localhost:3001/dashboard", {
+      const res = await fetch("http://localhost:3001/connexion", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +73,11 @@ export default function LoginPage() {
         const userData = await res.json();
         setData(userData);
         setSuccess('Connexion réussie !');
-        redirect('/dashboard');
+
+         setTimeout(() => {
+          router.push('/dashboard');
+        }, 2000);
+
       } else {
         const errorData = await res.json();
         setError(errorData.message || 'Identifiants invalides');
